@@ -1,0 +1,58 @@
+/*
+  Minimal modern reset
+  - predictable box sizing
+  - remove default margins
+  - sane defaults for media, forms, typography
+*/
+
+/* Note: ":where()" has zero specificity: that means rules inside :where() can easily be overridden by later or more specific css selectors */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:where(html, body) {
+    height: 100%;
+}
+
+:where(body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd) {
+    margin: 0;
+}
+
+:where(ul[role="list"], ol[role="list"]) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+:where(img, picture, video, canvas, svg) {
+    display: block;
+    max-width: 100%;
+}
+
+:where(button, input, select, textarea) {
+    font: inherit;
+    color: inherit;
+}
+
+:where(a) {
+    text-decoration: none;
+    color: inherit;
+}
+
+:where(body) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

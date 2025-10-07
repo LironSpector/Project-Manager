@@ -1,0 +1,95 @@
+.item {
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-3) var(--space-4);
+    display: grid;
+    gap: var(--space-2);
+    margin-bottom: 10px;
+}
+
+/* Top row: checkbox + title + rename/edit controls */
+.topRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.checkbox {
+    display: inline-grid;
+    place-items: center;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.completed .title {
+    text-decoration: line-through;
+    color: var(--color-muted);
+}
+
+.rename-task-button {
+    margin-left: 10px;
+}
+
+/* Inline edit controls */
+.inlineEdit {
+    display: inline-flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.inlineEdit input[type="text"] {
+    max-width: 360px;
+}
+
+/* Due date row */
+.dueRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+}
+
+.datetime {
+    min-width: 220px;
+}
+
+/* Actions row (delete) */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.danger {
+    background: transparent;
+    color: var(--color-danger);
+    border: 1px solid var(--color-border);
+}
+
+.danger:hover {
+    background: color-mix(in hsl, var(--color-danger) 10%, transparent);
+}
+
+/* Pending/disabled visual */
+.pending {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Compact on small screens */
+@media (max-width: 560px) {
+    .inlineEdit input[type="text"] {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .datetime {
+        width: 100%;
+    }
+}

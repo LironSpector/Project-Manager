@@ -1,0 +1,30 @@
+# dotnet
+**/bin/
+**/obj/
+*.user
+*.suo
+*.swp
+
+# node
+node_modules/
+dist/
+.vite/
+*.log
+
+# env/config
+*.env
+*.env.*
+!*.env.example
+
+# SQLite local DBs
+**/App_Data/*.db
+**/App_Data/*.db-shm
+**/App_Data/*.db-wal
+
+# VS/IDE
+.vscode/
+.vs/
+
+# OS
+.DS_Store
+Thumbs.db

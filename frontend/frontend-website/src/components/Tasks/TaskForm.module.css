@@ -1,0 +1,31 @@
+.form {
+    margin: var(--space-3) 0;
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.titleInput {
+    min-width: 0;
+}
+
+.datetime {
+    min-width: 220px;
+}
+
+.submit {
+    white-space: nowrap;
+}
+
+/* Stack these componenets on narrow screens */
+@media (max-width: 720px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .datetime,
+    .submit {
+        width: 100%;
+    }
+}

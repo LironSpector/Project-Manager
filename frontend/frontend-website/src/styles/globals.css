@@ -1,0 +1,168 @@
+/* Base document styles */
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: radial-gradient(1000px 700px at 10% -10%, hsl(222 90% 98%), transparent),
+        radial-gradient(800px 600px at 100% 0%, hsl(210 100% 97%), transparent),
+        var(--color-bg);
+    min-height: 100%;
+    line-height: 1.5;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin-bottom: var(--space-3);
+}
+
+h1 {
+    font-size: clamp(1.6rem, 1.2rem + 2vw, 2rem);
+}
+
+h2 {
+    font-size: clamp(1.3rem, 1.0rem + 1.2vw, 1.5rem);
+}
+
+h3 {
+    font-size: 1.125rem;
+}
+
+p,
+ul,
+ol {
+    margin-bottom: var(--space-3);
+}
+
+small {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+}
+
+/* Links */
+a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: var(--color-primary-600);
+}
+
+/* Buttons */
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 0.55rem 0.9rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: transform .06s ease, background .12s ease, box-shadow .12s ease;
+}
+
+button:hover {
+    background: var(--btn-bg-hover);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+button.ghost {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+button.ghost:hover {
+    background: color-mix(in hsl, var(--color-surface) 60%, transparent);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    background: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color .12s ease, box-shadow .12s ease;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px hsl(214 95% 60% / 0.25);
+}
+
+/* Form help/error */
+.input-error {
+    border-color: var(--color-danger) !important;
+}
+
+.help {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+}
+
+.error-text {
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+/* HR */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--space-6) 0;
+}
+
+/* Focus visible */
+:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+    background: hsl(214 95% 60% / 0.25);
+}
+
+/* Layout for root app if needed */
+#root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}

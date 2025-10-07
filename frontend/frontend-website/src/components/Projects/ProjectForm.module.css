@@ -1,0 +1,40 @@
+.form {
+    margin: var(--space-4) 0;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-5);
+    display: grid;
+    gap: var(--space-3);
+}
+
+.form h3 {
+    margin: 0;
+}
+
+.field {
+    display: grid;
+    gap: var(--space-1);
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: flex-end;
+}
+
+.error {
+    color: var(--color-danger);
+}
+
+/* Mobile: stretch the submit button */
+@media (max-width: 480px) {
+    .actions {
+        justify-content: stretch;
+    }
+
+    .actions> :where(button) {
+        width: 100%;
+    }
+}

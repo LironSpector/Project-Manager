@@ -1,0 +1,76 @@
+/* Layout wrapper for the whole app */
+.app {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header (top bar) */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.headerInner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand/link on the left */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: clamp(1rem, 0.9rem + 1vw, 1.25rem);
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: var(--color-primary-600);
+}
+
+/* Right-side actions (login/logout) */
+.actions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* Main content area */
+.main {
+    flex: 1;
+    padding: var(--space-5) var(--space-4);
+}
+
+.container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: block;
+}
+
+/* Small helper for spacing sections in pages that opt-in */
+.section {
+    margin-block: var(--space-6);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .headerInner {
+        padding: var(--space-3) var(--space-3);
+    }
+
+    .main {
+        padding: var(--space-4) var(--space-3);
+    }
+}

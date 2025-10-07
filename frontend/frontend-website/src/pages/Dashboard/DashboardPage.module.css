@@ -1,0 +1,33 @@
+.page {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: grid;
+    gap: var(--space-6);
+}
+
+.sectionTitle {
+    margin: 0;
+}
+
+.list {
+    display: grid;
+    gap: var(--space-3);
+    padding: 0;
+    list-style: none;
+}
+
+/* Info / empty / error states */
+.info {
+    color: var(--color-muted);
+}
+
+.error {
+    color: var(--color-danger);
+}
+
+/* On small screens give a little breathing room */
+@media (max-width: 768px) {
+    .page {
+        padding-inline: var(--space-1);
+    }
+}

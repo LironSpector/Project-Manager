@@ -1,0 +1,59 @@
+/* Centered, responsive auth card with a light-blue background */
+
+.form {
+    /* Center + width */
+    max-width: 420px;
+    margin: 8vh auto;
+    padding: var(--space-5);
+
+    /* Visuals */
+    background: hsl(210 100% 97%);
+    /* light blue card */
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+
+    /* Layout inside the form */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Heading */
+.form>h1 {
+    margin-bottom: var(--space-2);
+    text-align: center;
+}
+
+/* Field labels */
+.form label {
+    font-weight: 600;
+}
+
+.form input {
+    margin-top: var(--space-1);
+}
+
+/* Primary action spans width on small screens */
+.form button[type="submit"] {
+    width: 100%;
+    margin-top: var(--space-2);
+}
+
+/* Footer text (register/login link) */
+.form>div:last-child {
+    text-align: center;
+    margin-top: var(--space-2);
+}
+
+.error {
+    color: var(--color-danger);
+}
+
+/* Compact spacing on very small screens */
+@media (max-width: 480px) {
+    .form {
+        margin: var(--space-6) var(--space-3);
+        padding: var(--space-4);
+    }
+}
